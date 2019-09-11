@@ -1,4 +1,4 @@
-import os
+from os import remove
 
 def mv(archivo, destino):
     """ Mueve el archivo seleccionado hacia otra ubicacion """
@@ -9,10 +9,10 @@ def mv(archivo, destino):
         with open(destino, "w") as f:
             texto_movido = f.writelines(texto)
             print(texto_movido)
-        os.remove(archivo)
+            remove(archivo)
         print("El archivo se ha movido satisfactoriamente")
     except FileNotFoundError:
         print("El archivo no existe")
     
 
-mv("carpeta/lorem-movido.txt", "./lorem.txt")
+mv("lorem.txt", "carpeta/lorem-mv.txt")
