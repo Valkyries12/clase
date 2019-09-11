@@ -15,9 +15,7 @@ def wc(archivo):
                     caracteres += len(palabra)
             print(f"Lineas: {lineas}, Palabras: {palabras}, Caracteres: {caracteres}")
 
-    except IOError:
+    except FileNotFoundError:
         print("El archivo no existe")
-    except:
-        print("Oops ha sucedido un problema :(")
 
 wc("lorem.txt")

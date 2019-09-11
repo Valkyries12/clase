@@ -5,7 +5,7 @@ def cat(archivo):
             texto = f.readlines()
             for linea in texto:
                 print(linea)
-    except IOError:
+    except FileNotFoundError:
         print("No se ha encontrado el archivo")
 
 cat("lorem.txt")

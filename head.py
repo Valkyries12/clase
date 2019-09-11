@@ -7,9 +7,7 @@ def head(archivo, n:int):
             for i in range(n):
                 linea = f.readline()
                 print(linea)
-    except IOError:
+    except FileNotFoundError:
         print("El archivo no existe")
-    except Exception:
-        print("Algo ha salido mal")
 
 head("lorem.txt", "e")

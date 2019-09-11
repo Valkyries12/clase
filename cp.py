@@ -6,14 +6,11 @@ def cp(archivo, copia):
     try:
         with open(archivo) as f:
             texto = f.readlines()
-    except IOError:
-        print("El archivo no existe")
-    try:
         with open(copia, "w") as f:
             for linea in texto:
                 lineas = linea
                 f.writelines(lineas)
-    except:
-        print("Algo ha falldo en la escritura del archivo")
+    except FileNotFoundError:
+        print("El archivo no existe")
 
-cp("loem.txt", "copia_lorem.txt")
+cp("lorem.txt", "copia_lorem2.txt")
